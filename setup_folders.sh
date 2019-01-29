@@ -1,7 +1,7 @@
 cd /opt/cluster_cidacs/packages
 
 echo "Extracting packages..."
-tar -xvzf tar -xvzf hadoop-3.2.0.tar.gz
+tar -xvzf hadoop-3.2.0.tar.gz
 tar -xvzf spark-2.4.0-bin-hadoop2.7.tgz
 unzip livy-0.5.0-incubating-bin.zip
 echo "Done."
