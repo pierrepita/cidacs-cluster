@@ -1,0 +1,11 @@
+<configuration>
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>file:///home/cluster/hdfs/name</value>
+    </property>
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>file:///home/cluster/hdfs/data</value>
+    </property>
+</configuration>
+

@@ -1,0 +1,16 @@
+<!-- FIXME: edit hadoop adress and tmp folder -->
+<configuration>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://master:9000</value>
+    </property>
+    <property>
+        <name>hadoop.tmp.dir</name>
+        <value>/home/cluster/hdfs/tmp</value>
+    </property>
+    <property>
+        <name>io.compression.codecs</name>
+        <value>org.apache.hadoop.io.compress.SnappyCodec</value>
+    </property>
+</configuration>
+
