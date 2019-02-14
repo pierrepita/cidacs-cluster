@@ -16,7 +16,23 @@
 
 ### Network Access
 
+Prior to starting the cluster configuration we must check if:
+
+1. All nodes of the cluster are in the same network;
+2. Network ports related to HDFS, Spark and Livy are open;
+3. SSH service is enabled and every the master node can connect to each slave node.
+
+After these conditions are met,
+we can proceed to the next step. 
+
 #### Hostname
+
+The first step is to name each machine in the cluster.
+The following convention was used for naming the machine:
+we used `nodeX` where X is the number of the machine assuming node1 is going to be the master node.
+Then, we replace the content of `/etc/hostname` with the name chosen for the machine
+(eg. we write node1 in ´/etc/hostname´ for the master node,
+node2 for the second computer and so on)
 
 #### Hosts File
 
