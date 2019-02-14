@@ -55,6 +55,14 @@ Type enter to choose the default location.
 ### Config Softwares
 #### Download Packages
 ##### Extract and Setup Folders
+Once all files are downloaded and placed in `/opt/cluster_cidacs`
+folder it is time to create the file structure necessary for the cluster to work.
+A bash script has been created to deal with this step.
+The script ‘setup_folders.sh’ can be found in /opt/cluster_cidacs/bin.
+It unpacks Spark, Hadoop and Livy, moves each folder to `/opt` and create three symbolic links,
+one for each software folder.
+The expected result is to have three symbolic links: `/opt/spark`, `/opt/livy`, and `/opt/hadoop`.
+
 #### Setup Java
 #### Configure Enviroment Variables
 
