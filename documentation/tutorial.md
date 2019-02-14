@@ -34,7 +34,9 @@ The following lines were added to the `/etc/hosts` file of each node:
 
 ### User
 #### Creating User
+
 #### SSH Paswordless Login
+
 One cluster is usually composed of several slave nodes
 that are controlled by one master node.
 In order to control the slaves,
@@ -54,17 +56,40 @@ Type enter to choose the default location.
 
 ### Config Softwares
 #### Download Packages
+
 ##### Extract and Setup Folders
+
 Once all files are downloaded and placed in `/opt/cluster_cidacs`
 folder it is time to create the file structure necessary for the cluster to work.
 A bash script has been created to deal with this step.
-The script ‘setup_folders.sh’ can be found in /opt/cluster_cidacs/bin.
+The script `setup_folders.sh` can be found in `/opt/cluster_cidacs/bin`.
 It unpacks Spark, Hadoop and Livy, moves each folder to `/opt` and create three symbolic links,
 one for each software folder.
 The expected result is to have three symbolic links: `/opt/spark`, `/opt/livy`, and `/opt/hadoop`.
 
 #### Setup Java
+
 #### Configure Enviroment Variables
+
+After placing each folder at its place,
+a list of environment variables for binary and configuration
+folders are added to the `bash_profile` file.
+These variables are needed in order for the cluster to work.
+They provide a unified way to find and call Spark/Hadoop/Livy binaries and configs.
+The script `setup_env_var.sh` found in `/opt/cluster_cidacs/bin` appends the following lines to the `bash_profile` file:
+
+```
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0                                                                  
+export HADOOP_PREFIX=/opt/hadoop                                                                          
+export HADOOP_CONF_DIR=$HADOOP_PREFIX/etc/hadoop                                                          
+export SPARK_HOME=/opt/spark                                                                              
+export JAVA_LIBRARY_PATH=/opt/hadoop/lib/native                                                           
+export LD_LIBRARY_PATH=/opt/hadoop/lib/native                                                             
+PATH=$PATH:$HOME/.local/bin:$HOME/bin:$JAVA_HOME/bin:$HADOOP_PREFIXbin:$HADOOP_PREFIX/sbin:$SPARK_HOME/bi
+n:$SPARK_HOME/sbin                                                                                        
+export PATH
+```
+
 
 ### HDFS
 #### Create HDFS Folders
