@@ -35,6 +35,22 @@ The following lines were added to the `/etc/hosts` file of each node:
 ### User
 #### Creating User
 #### SSH Paswordless Login
+One cluster is usually composed of several slave nodes
+that are controlled by one master node.
+In order to control the slaves,
+the master has to have access by ssh to the slaves.
+SSH normally requires a password to be typed in order to establish a connection.
+Thus,
+a configuration is set on the master node to enable it
+to access the slaves without password requirement.
+The following steps need to be followed to achieve passwordless ssh login:
+
+1. Under the user cluster in the master node 
+the bash command `ssh-keygen -t rsa` is used to create public and private keys.
+Prompt will show a message asking for an address to store the keys.
+Type enter to choose the default location.
+2. The public needs to be transferred to the slave nodes through the following bash command:
+`ssh-copy-id -i ~/.ssh/id_rsa.pub <node-hostname>`.
 
 ### Config Softwares
 #### Download Packages
