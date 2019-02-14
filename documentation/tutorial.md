@@ -15,6 +15,7 @@
 ## Prerequisites
 
 ### Network Access
+
 #### Hostname
 
 #### Hosts File
@@ -33,7 +34,18 @@ The following lines were added to the `/etc/hosts` file of each node:
 ``` 
 
 ### User
+
+In this tutorial we assume a standard name for the username used to access each server.
+The standard name chosen was `cluster` and all the steps in this tutorial must be done using this user
+(except those cases where sudo is needed).
+This user does not need to have SU permisions,
+but it must be able to become su through `sudo` command. 
+
 #### Creating User
+
+Creating the user is done using `adduser` command on a user with SU rights.
+After adding the user `cluster` it is necessary to do a `passwd cluster` to setup the password.
+To simplify the configuration, the same user and password should be used in every machine in the cluster.   
 
 #### SSH Paswordless Login
 
