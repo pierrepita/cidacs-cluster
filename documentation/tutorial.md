@@ -16,7 +16,15 @@
 
 ### Network Access
 #### Hostname
+
 #### Hosts File
+
+When a DNS server is not available,
+accessing one node from another by SSH is done by using the full IP address number.
+One better option is to setup host names for each node.
+Thus, the user can access the nodes by typing their host names,
+which is easier for humans to deal with.
+The following lines were added to the /etc/hosts file of each node:
 
 ### User
 #### Creating User
