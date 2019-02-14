@@ -24,7 +24,13 @@ accessing one node from another by SSH is done by using the full IP address numb
 One better option is to setup host names for each node.
 Thus, the user can access the nodes by typing their host names,
 which is easier for humans to deal with.
-The following lines were added to the /etc/hosts file of each node:
+The following lines were added to the `/etc/hosts` file of each node:
+
+```
+172.16.5.15	node3
+172.16.5.14	node2
+172.16.5.25	node1
+``` 
 
 ### User
 #### Creating User
