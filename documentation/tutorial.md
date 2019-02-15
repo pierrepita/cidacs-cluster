@@ -97,6 +97,11 @@ The expected result is to have three symbolic links: `/opt/spark`, `/opt/livy`, 
 
 #### Setup Java
 
+Hadoop, Livy and Spark are JVM based tools. 
+They require java to work.
+This documentation assumes Sun JDK is already installed in
+every machine in the `/usr/lib/jvm/java` directory.
+
 #### Configure Enviroment Variables
 
 After placing each folder at its place,
@@ -107,7 +112,7 @@ They provide a unified way to find and call Spark/Hadoop/Livy binaries and confi
 The script `setup_env_var.sh` found in `/opt/cluster_cidacs/bin` appends the following lines to the `bash_profile` file:
 
 ```
-export JAVA_HOME=/usr/lib/jvm/java-1.8.0                                                                  
+export JAVA_HOME=/usr/lib/jvm/java
 export HADOOP_PREFIX=/opt/hadoop                                                                          
 export HADOOP_CONF_DIR=$HADOOP_PREFIX/etc/hadoop                                                          
 export SPARK_HOME=/opt/spark                                                                              
