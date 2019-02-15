@@ -124,6 +124,28 @@ Downloading libraries and dependencies:
 repotrack -a x86_64 -p /opt/cluster_cidacs/repotrack-lib/ unzip bzip2 gcc python-devel krb5-devel krb5-workstation
 ```
 
+NOTE:  repotrack will download any architectures compatible with the one specified `(x86_64)`. You should remove the i686 architecture files:
+
+```
+rm /opt/cluster_cidacs/lib/*i686.rpm
+```
+
+To install the downloaded packages:
+
+```
+sudo yum --disablerepo=* localinstall /opt/cluster_cidacs/lib/*.rpm
+
+``` 
+
+As the pip repository is already installed in the offline environment, to install the necessary pip packages:
+
+
+```
+# pip version used in this guide: 19.0.1
+sudo pip install sparkmagic jupyterlab
+
+```
+
 ##### Extract and Setup Folders
 
 Once all files are downloaded and placed in `/opt/cluster_cidacs`
