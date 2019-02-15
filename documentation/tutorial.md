@@ -82,8 +82,47 @@ Type enter to choose the default location.
 2. The public needs to be transferred to the slave nodes through the following bash command:
 `ssh-copy-id -i ~/.ssh/id_rsa.pub <node-hostname>`.
 
-### Config Softwares
+### Setting Up Softwares
+
+For security infrastructure reasons,
+the CIDACS cluster installation must be made offline.
+In order to do that,
+we need to download the packages and libraries needed to perform an offline installation.
+
+The following section will address how to download such files in an online environment
+to subsequently use them in the offline installation.
+We will store the libraries under `/opt/cluster_cidacs/lib` folder
+and the packages under `/opt/cluster_cidacs/packages` folder.
+We will also create a `/opt/cluster_cidacs/bin` folder
+that will contain the scripts created as a product of this documentation.
+
 #### Download Packages
+
+The first step before downloading the package
+is to create the file structure where the files will be stored.
+
+The following commands are used to create the folders:
+
+```
+sudo mkdir -p /opt/cluster_cidacs/{lib,packages,bin}
+sudo chmod -R 777 /opt/cluster_cidacs
+cd /opt/cluster_cidacs
+```
+
+Inside the `cluster_cidacs` folder use the following commands to download the softwares:
+
+```
+curl -LO https://archive.apache.org/dist/hadoop/common/hadoop-3.2.0/hadoop-3.2.0.tar.gz
+curl -LO http://apache.mirrors.tds.net/spark/spark-2.4.0/spark-2.4.0-bin-hadoop2.7.tgz
+curl -LO http://archive.apache.org/dist/incubator/livy/0.5.0-incubating/livy-0.5.0-incubating-bin.zip
+curl -LO https://repo.anaconda.com/archive/Anaconda2-5.3.1-Linux-x86.sh
+``` 
+
+Downloading libraries and dependencies:
+
+```
+repotrack -a x86_64 -p /opt/cluster_cidacs/repotrack-lib/ unzip bzip2 gcc python-devel krb5-devel krb5-workstation
+```
 
 ##### Extract and Setup Folders
 
