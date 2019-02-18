@@ -134,7 +134,6 @@ To install the downloaded packages:
 
 ```
 sudo yum --disablerepo=* localinstall /opt/cluster_cidacs/lib/*.rpm
-
 ``` 
 
 As the pip repository is already installed in the offline environment, to install the necessary pip packages:
@@ -143,7 +142,6 @@ As the pip repository is already installed in the offline environment, to instal
 ```
 # pip version used in this guide: 19.0.1
 sudo pip install sparkmagic jupyterlab
-
 ```
 
 ##### Extract and Setup Folders
@@ -183,7 +181,6 @@ PATH=$PATH:$HOME/.local/bin:$HOME/bin:$JAVA_HOME/bin:$HADOOP_PREFIXbin:$HADOOP_P
 n:$SPARK_HOME/sbin                                                                                        
 export PATH
 ```
-
 
 ### HDFS
 
@@ -279,12 +276,25 @@ We need to adjust the slaves files for spark the same way we did for HDFS.
 It can be done adding the network adresses to `$SPARK_HOME/conf/slaves`
 
 ### Livy
+
+Livy is the software used to connect Jupyter notebook to Spark cluster.
+We need to config the livy.conf file before starting the service.
+
 #### Livy.conf
+
+Assuming we are using `node1` as master,
+we can use the `setup_livy.sh` script to configure livy.
+The script will append the following line to `/opt/livy/conf/livy.conf`:
+
+```
+spark://node1:7077
+```
 
 ### Anaconda
 #### Install Anaconda
 #### Add Anaconda to system PATH
 #### Setup Jupyter Labs Enviroment
 #### Enable Passowrd Login
+
 
 
