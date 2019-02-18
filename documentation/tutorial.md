@@ -262,8 +262,21 @@ Assuming `node1` as the master for HDFS
 we need to run `$HADOOP_PREFIX/bin/hdfs namenode node1` to format the file system.
 
 ### Spark
+
+To setup spark we need to change two files:
+`spark-env.sh` and the slaves file.
+
 #### Setup spark.env.sh file
+
+We use the script `setup_spark.sh` from our repository to setup spark.
+Note the conficurations in this script must change acording to each machine.
+If the machines in your cluster have different hardware setups,
+please adjust the script accordingly.
+
 #### Setup Slaves
+
+We need to adjust the slaves files for spark the same way we did for HDFS.
+It can be done adding the network adresses to `$SPARK_HOME/conf/slaves`
 
 ### Livy
 #### Livy.conf
