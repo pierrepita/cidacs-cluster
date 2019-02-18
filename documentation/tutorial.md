@@ -186,8 +186,50 @@ export PATH
 
 
 ### HDFS
+
+In order to HDFS to work
+we need to setup a physical location where HDFS files will be stored
+in the machine file system,
+two XML files that control HDFS behavior,
+and the slaves file which is used by the master to start the whole cluster automatically.
+
 #### Create HDFS Folders
+
+The HDFS folders are created using the  script `setup_hdfs.sh`.
+The script creates the following folders:
+
+```
+mkdir /home/cluster/hdfs
+mkdir /home/cluster/hdfs/name
+mkdir /home/cluster/hdfs/data
+mkdir /home/cluster/hdfs/tmp
+```
+
 #### Setup XML Files
+
+We need to configure the `core-site.xml` file and the `hdfs-site.xml` file.
+The `setup_hdfs.sh` script also take care of this part.
+It appends the following configs to each file:
+
+- `hdfs-site.xml`
+```
+<!-- FIXME: edit hadoop adress and tmp folder -->
+<configuration>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://node1:9000</value>
+    </property>
+    <property>
+        <name>hadoop.tmp.dir</name>
+        <value>/home/cluster/hdfs/tmp</value>
+    </property>
+    <property>
+        <name>io.compression.codecs</name>
+        <value>org.apache.hadoop.io.compress.SnappyCodec</value>
+    </property>
+</configuration>
+``` 
+
 #### Setup Slaves
 #### Format HDFS
 
