@@ -230,9 +230,36 @@ It appends the following configs to each file:
 </configuration>
 ``` 
 
+- `core-site.xmk`
+```
+<configuration>
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>file:///home/cluster/hdfs/name</value>
+    </property>
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>file:///home/cluster/hdfs/data</value>
+    </property>
+</configuration>
+```
+
 #### Setup Slaves
+
+We need to add the network adress of all datanode machines to
+`$HADOOP_PREFIX/etc/hadoop/slaves` file.
+An example of the file for three machines would be:
+
+```
+node1
+node2
+node3
+```
+ 
 #### Format HDFS
 
+Assuming `node1` as the master for HDFS
+we need to run `$HADOOP_PREFIX/bin/hdfs namenode node1` to format the file system.
 
 ### Spark
 #### Setup spark.env.sh file
