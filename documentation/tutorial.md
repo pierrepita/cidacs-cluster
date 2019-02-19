@@ -291,6 +291,17 @@ spark://node1:7077
 ```
 
 ### Anaconda
+
+1. Download anaconda 3
+2. Install in /opt/conda/anaconda
+3. Add Bashrc manually `export PATH=/opt/anaconda/conda/bin:$PATH`
+4. conda install -c conda-forge jupyterhub
+5. Install kernels in `/usr/local/share/jupyter/kernels/`
+6. Add configuration file for each user `.sparkmagic/config.json`
+7. Add configuration for user impersonate in `core-site.xml`
+
+
+
 #### Install Anaconda
 #### Add Anaconda to system PATH
 #### Setup Jupyter Labs Enviroment
