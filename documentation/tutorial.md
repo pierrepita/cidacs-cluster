@@ -299,7 +299,7 @@ spark://node1:7077
 5. Install kernels in `/usr/local/share/jupyter/kernels/`
 6. Add configuration file for each user `.sparkmagic/config.json`
 7. Add configuration for user impersonate in `core-site.xml`
-
+8. Add configs for spark to work with Dynamic allocation
 
 
 #### Install Anaconda
