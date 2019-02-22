@@ -307,5 +307,10 @@ spark://node1:7077
 #### Setup Jupyter Labs Enviroment
 #### Enable Passowrd Login
 
+### IPython Kernel
+
+#### Levels
+#### Kernel File
+
 
 
