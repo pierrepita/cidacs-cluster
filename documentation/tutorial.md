@@ -292,6 +292,32 @@ spark://node1:7077
 
 ### Anaconda
 
+In order to run jobs on the cluster we choose to work with
+jupyter notebooks as our main tool.
+There are other options available but jupyter is far the most used among data scientists.
+We decided to use Anaconda as our platform as it comes with jupyter and many other python libraries
+such as matplot lib, numpy, pandas, and others that are already used by our team.
+
+#### Install Anaconda
+
+The fist step is to install anaconda.
+This needs to be done in all nodes. 
+We do that by running the command `./` %FIXME: add the full command 
+inside `/opt/`cidacs_cluster/bin` folder.
+Informationa about the installation will be printed on the screen.
+Select `/opt/anaconda/conda` as your directory of installation
+in order to make anaconda available for all users.
+The installation package will ask wether you want to append export commands to your `.bashrc` file,
+chose *no* as this will be done later.
+Also chose *no* when asked about instaling MS Visual Studio Code.
+To complete the installation,
+add the line `export PATH=/opt/anaconda/conda/bin:PATH` to
+`.bash_profile` file of user cluster in all nodes.
+Add this line to root user of node1 also,
+as we will further use this user to run the aplication.
+
+#### Install Libraries
+
 1. Download anaconda 3
 2. Install in /opt/conda/anaconda
 3. Add Bashrc manually `export PATH=/opt/anaconda/conda/bin:$PATH`
