@@ -301,6 +301,7 @@ spark://node1:7077
 7. Add configuration for user impersonate in `core-site.xml`
 8. Add configs for spark to work with Dynamic allocation
 
+--- install anaconda for all users
 
 #### Install Anaconda
 #### Add Anaconda to system PATH
