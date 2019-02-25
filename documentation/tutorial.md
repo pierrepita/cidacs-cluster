@@ -332,9 +332,6 @@ as we will further use this user to run the aplication.
 #### Install Anaconda
 #### Add Anaconda to system PATH
 #### Setup Jupyter Labs Enviroment
-#### Enable Passowrd Login
-
-### IPython Kernel
 
 #### Levels
 #### Kernel File
