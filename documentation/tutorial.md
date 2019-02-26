@@ -318,6 +318,52 @@ as we will further use this user to run the aplication.
 
 #### Install Libraries
 
+We will need to install two libraries to our platform.
+The first is jupyterhub,
+which will be used to start a server of jupyter
+that will enable users to login using PAM credentials.
+The other is sparkmagic,
+which provides an interface between jupyter notebook and livy.
+
+##### JupyterHub
+
+Use the following commands to install `JupyterHub`:
+
+```
+npm install -g configurable-http-proxy
+python3 -m pip install jupyterhub 
+```
+
+##### Sparkmagic
+
+The following command is used to install `sparkmagic` and enable extentions for jupyter notebooks:
+
+```
+pip install sparkmagic
+jupyter nbextension enable --py --sys-prefix widgestsnbextension
+```
+
+After intalling sparkmagic we need to install the necessary kernels inside jupyter.
+
+First we need to find out where sparkmagic is:
+
+```
+pip show sparkmagic
+```
+
+We proceed to entering sparkmagic folder and installing the kernels:
+
+```
+cd /opt/anaconda/conda/lib/python3.7/site-packages
+
+jupyter-kernelspec install sparkmagic/kernels/pysparkkernel
+jupyter-kernelspec install sparkmagic/kernels/sparkrkernel
+
+jupyter serverextension enable --py sparkmagic
+```
+
+
+
 1. Download anaconda 3
 2. Install in /opt/conda/anaconda
 3. Add Bashrc manually `export PATH=/opt/anaconda/conda/bin:$PATH`
