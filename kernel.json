@@ -1,5 +1,5 @@
 {
- "display_name": "PySpark (Spark 2.0)",
+ "display_name": "PySpark (Spark 2.4)",
  "language": "python",
  "argv": [
   "/opt/anaconda/conda/bin/python",
