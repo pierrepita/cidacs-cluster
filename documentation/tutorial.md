@@ -319,6 +319,7 @@ as we will further use this user to run the aplication.
 #### Install Libraries
 
 We will need to install two libraries to our platform.
+It is important to note that the libraries are only needed no `node1`.
 The first is jupyterhub,
 which will be used to start a server of jupyter
 that will enable users to login using PAM credentials.
@@ -336,38 +337,15 @@ python3 -m pip install jupyterhub
 
 ##### Sparkmagic
 
-The following command is used to install `sparkmagic` and enable extentions for jupyter notebooks:
+In order to use livy we need to install `sparkmagic` and enable extentions for jupyter notebooks.
+This can be done calling `install_jupyter_kernels.sh` script.
+% TODO: describe better where to find the script
 
-```
-pip install sparkmagic
-jupyter nbextension enable --py --sys-prefix widgestsnbextension
-```
-
-After intalling sparkmagic we need to install the necessary kernels inside jupyter.
-
-First we need to find out where sparkmagic is:
-
-```
-pip show sparkmagic
-```
-
-We proceed to entering sparkmagic folder and installing the kernels:
-
-```
-cd /opt/anaconda/conda/lib/python3.7/site-packages
-
-jupyter-kernelspec install sparkmagic/kernels/pysparkkernel
-jupyter-kernelspec install sparkmagic/kernels/sparkrkernel
-
-jupyter serverextension enable --py sparkmagic
-```
+##### Pyspark custom kernel
 
 
 
-1. Download anaconda 3
-2. Install in /opt/conda/anaconda
-3. Add Bashrc manually `export PATH=/opt/anaconda/conda/bin:$PATH`
-4. conda install -c conda-forge jupyterhub
+
 5. Install kernels in `/usr/local/share/jupyter/kernels/`
 6. Add configuration file for each user `.sparkmagic/config.json`
 7. Add configuration for user impersonate in `core-site.xml`
@@ -375,12 +353,6 @@ jupyter serverextension enable --py sparkmagic
 
 --- install anaconda for all users
 
-#### Install Anaconda
-#### Add Anaconda to system PATH
-#### Setup Jupyter Labs Enviroment
-
-#### Levels
-#### Kernel File
 
 
 
