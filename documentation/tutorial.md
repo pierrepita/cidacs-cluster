@@ -341,17 +341,17 @@ In order to use livy we need to install `sparkmagic` and enable extentions for j
 This can be done calling `install_jupyter_kernels.sh` script.
 % TODO: describe better where to find the script
 
+% TODO added description to copy sparkmagic config file
+
 ##### Pyspark custom kernel
 
+Besides sparkmagic we provide a way to access spark directly without livy.
+This is done through a custom kernel designed to access pyspark directly through spark folder.
+To install this kernel, use the `install_pyspark_kernel.sh` script.
 
-
-
-5. Install kernels in `/usr/local/share/jupyter/kernels/`
-6. Add configuration file for each user `.sparkmagic/config.json`
 7. Add configuration for user impersonate in `core-site.xml`
 8. Add configs for spark to work with Dynamic allocation
 
---- install anaconda for all users
 
 
 
