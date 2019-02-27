@@ -1,0 +1,55 @@
+{
+  "kernel_python_credentials" : {
+    "username": "",
+    "password": "",
+    "url": "http://node1:8998",
+    "auth": "None"
+  },
+
+  "kernel_scala_credentials" : {
+    "username": "",
+    "password": "",
+    "url": "http://node1:8998",
+    "auth": "None"
+  },
+  "kernel_r_credentials": {
+    "username": "",
+    "password": "",
+    "url": "http://node1:8998"
+  },
+
+  "logging_config": {
+    "version": 1,
+    "formatters": {
+      "magicsFormatter": { 
+        "format": "%(asctime)s\t%(levelname)s\t%(message)s",
+        "datefmt": ""
+      }
+    },
+    "handlers": {
+      "magicsHandler": { 
+        "class": "hdijupyterutils.filehandler.MagicsFileHandler",
+        "formatter": "magicsFormatter",
+        "home_path": "~/.sparkmagic"
+      }
+    },
+    "loggers": {
+      "magicsLogger": { 
+        "handlers": ["magicsHandler"],
+        "level": "DEBUG",
+        "propagate": 0
+      }
+    }
+  },
+
+  "wait_for_idle_timeout_seconds": 15,
+  "livy_session_startup_timeout_seconds": 60,
+
+  "fatal_error_suggestion": "The code failed because of a fatal error:\n\t{}.\n\nSome things to try:\na) Make sure Spark has enough available resources for Jupyter to create a Spark context.\nb) Contact your Jupyter administrator to make sure the Spark magics library is configured correctly.\nc) Restart the kernel.",
+
+  "ignore_ssl_errors": false,
+
+  "session_configs": {
+    "proxyUser": "<user>"
+  }
+}
