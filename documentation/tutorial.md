@@ -303,7 +303,7 @@ such as matplot lib, numpy, pandas, and others that are already used by our team
 The fist step is to install anaconda.
 This needs to be done in all nodes. 
 We do that by running the command `./` %FIXME: add the full command 
-inside `/opt/`cidacs_cluster/bin` folder.
+inside `/opt/cidacs_cluster/bin` folder.
 Informationa about the installation will be printed on the screen.
 Select `/opt/anaconda/conda` as your directory of installation
 in order to make anaconda available for all users.
