@@ -227,7 +227,7 @@ It appends the following configs to each file:
 </configuration>
 ``` 
 
-- `core-site.xmk`
+- `core-site.xml`
 ```
 <configuration>
     <property>
@@ -237,6 +237,14 @@ It appends the following configs to each file:
     <property>
         <name>dfs.datanode.data.dir</name>
         <value>file:///home/cluster/hdfs/data</value>
+    </property>
+    <property>
+      <name>hadoop.proxyuser.cluster.groups</name>
+      <value>*</value>
+    </property>
+    <property>
+      <name>hadoop.proxyuser.cluster.hosts</name>
+      <value>*</value>
     </property>
 </configuration>
 ```
@@ -289,6 +297,16 @@ The script will append the following line to `/opt/livy/conf/livy.conf`:
 ```
 spark://node1:7077
 ```
+
+#### User impersonation
+
+Livy server is started from `cluster` user.
+Thus, all aplications started in spark are done by this user.
+In order to provide rastreability we need a way to allow users start the application
+with their own credentials.
+This is done trough impersonate function of livy.
+It requires a special config in `core-site.xml` which should have being added during
+HDFS configuration step.
 
 ### Anaconda
 
