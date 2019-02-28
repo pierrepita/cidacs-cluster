@@ -103,7 +103,7 @@ is to create the file structure where the files will be stored.
 
 The following commands are used to create the folders:
 
-```
+```bash
 sudo mkdir -p /opt/cluster_cidacs/{lib,packages,bin}
 sudo chmod -R 777 /opt/cluster_cidacs
 cd /opt/cluster_cidacs
@@ -111,7 +111,7 @@ cd /opt/cluster_cidacs
 
 Inside the `cluster_cidacs` folder use the following commands to download the softwares:
 
-```
+```bash
 curl -LO https://archive.apache.org/dist/hadoop/common/hadoop-3.2.0/hadoop-3.2.0.tar.gz
 curl -LO http://apache.mirrors.tds.net/spark/spark-2.4.0/spark-2.4.0-bin-hadoop2.7.tgz
 curl -LO http://archive.apache.org/dist/incubator/livy/0.5.0-incubating/livy-0.5.0-incubating-bin.zip
@@ -120,26 +120,26 @@ curl -LO https://repo.anaconda.com/archive/Anaconda3-2018.12-Linux-x86_64.sh
 
 Downloading libraries and dependencies:
 
-```
+```bash
 repotrack -a x86_64 -p /opt/cluster_cidacs/repotrack-lib/ unzip bzip2 gcc python-devel krb5-devel krb5-workstation
 ```
 
 NOTE:  repotrack will download any architectures compatible with the one specified `(x86_64)`. You should remove the i686 architecture files:
 
-```
+```bash
 rm /opt/cluster_cidacs/lib/*i686.rpm
 ```
 
 To install the downloaded packages:
 
-```
+```bash
 sudo yum --disablerepo=* localinstall /opt/cluster_cidacs/lib/*.rpm
 ``` 
 
 As the pip repository is already installed in the offline environment, to install the necessary pip packages:
 
 
-```
+```bash
 # pip version used in this guide: 19.0.1
 sudo pip install sparkmagic jupyterlab
 ```
@@ -170,7 +170,7 @@ These variables are needed in order for the cluster to work.
 They provide a unified way to find and call Spark/Hadoop/Livy binaries and configs.
 The script `setup_env_var.sh` found in `/opt/cluster_cidacs/bin` appends the following lines to the `bash_profile` file:
 
-```
+```bash
 export JAVA_HOME=/usr/lib/jvm/java
 export HADOOP_PREFIX=/opt/hadoop                                                                          
 export HADOOP_CONF_DIR=$HADOOP_PREFIX/etc/hadoop                                                          
@@ -195,7 +195,7 @@ and the slaves file which is used by the master to start the whole cluster autom
 The HDFS folders are created using the  script `setup_hdfs.sh`.
 The script creates the following folders:
 
-```
+```bash
 mkdir /home/cluster/hdfs
 mkdir /home/cluster/hdfs/name
 mkdir /home/cluster/hdfs/data
@@ -350,7 +350,7 @@ which provides an interface between jupyter notebook and livy.
 
 Use the following commands to install `JupyterHub`:
 
-```
+```bash
 npm install -g configurable-http-proxy
 python3 -m pip install jupyterhub 
 ```
