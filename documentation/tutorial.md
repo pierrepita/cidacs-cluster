@@ -115,7 +115,7 @@ Inside the `cluster_cidacs` folder use the following commands to download the so
 curl -LO https://archive.apache.org/dist/hadoop/common/hadoop-3.2.0/hadoop-3.2.0.tar.gz
 curl -LO http://apache.mirrors.tds.net/spark/spark-2.4.0/spark-2.4.0-bin-hadoop2.7.tgz
 curl -LO http://archive.apache.org/dist/incubator/livy/0.5.0-incubating/livy-0.5.0-incubating-bin.zip
-curl -LO https://repo.anaconda.com/archive/Anaconda2-5.3.1-Linux-x86.sh
+curl -LO https://repo.anaconda.com/archive/Anaconda3-2018.12-Linux-x86_64.sh
 ``` 
 
 Downloading libraries and dependencies:
@@ -273,10 +273,12 @@ To setup spark we need to change two files:
 
 #### Setup spark.env.sh file
 
-We use the script `setup_spark.sh` from our repository to setup spark.
+We use the script `setup_spark.sh` from `cidacs-cluster` repository to setup spark.
 Note the conficurations in this script must change acording to each machine.
 If the machines in your cluster have different hardware setups,
 please adjust the script accordingly.
+Note that the script also takes care of Dynamic Allocation,
+which should be configured acording with the needs of the users.
 
 #### Setup Slaves
 
@@ -320,8 +322,8 @@ such as matplot lib, numpy, pandas, and others that are already used by our team
 
 The fist step is to install anaconda.
 This needs to be done in all nodes. 
-We do that by running the command `./` %FIXME: add the full command 
-inside `/opt/cidacs_cluster/bin` folder.
+We do that by running the command `./Anaconda3-2018.12-Linux-x86_64.sh` 
+inside `/opt/cidacs_cluster/packages` folder.
 Informationa about the installation will be printed on the screen.
 Select `/opt/anaconda/conda` as your directory of installation
 in order to make anaconda available for all users.
@@ -356,20 +358,16 @@ python3 -m pip install jupyterhub
 ##### Sparkmagic
 
 In order to use livy we need to install `sparkmagic` and enable extentions for jupyter notebooks.
-This can be done calling `install_jupyter_kernels.sh` script.
-% TODO: describe better where to find the script
+This can be done calling `install_jupyter_kernels.sh` from `cidacs-cluster` repo script.
 
-% TODO added description to copy sparkmagic config file
+After installing the kernels a config needs to be copied to the home directory of each user 
+that will have access to the cluster. We do that by calling `copy_sparkmagic_config.sh` from `cidacs-cluster`.
 
 ##### Pyspark custom kernel
 
 Besides sparkmagic we provide a way to access spark directly without livy.
 This is done through a custom kernel designed to access pyspark directly through spark folder.
 To install this kernel, use the `install_pyspark_kernel.sh` script.
-
-7. Add configuration for user impersonate in `core-site.xml`
-8. Add configs for spark to work with Dynamic allocation
-
 
 
 
