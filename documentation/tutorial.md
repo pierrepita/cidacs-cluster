@@ -37,8 +37,8 @@ node2 for the second computer and so on)
 #### Hosts File
 
 When a DNS server is not available,
-accessing one node from another by SSH is done by using the full IP address number.
-One better option is to setup host names for each node.
+accessing one node from another by SSH is done typing the full IP address number.
+A better option is to setup host names for each node.
 Thus, the user can access the nodes by typing their host names,
 which is easier for humans to deal with.
 The following lines were added to the `/etc/hosts` file of each node:
@@ -53,9 +53,10 @@ The following lines were added to the `/etc/hosts` file of each node:
 
 In this tutorial we assume a standard name for the username used to access each server.
 The standard name chosen was `cluster` and all the steps in this tutorial must be done using this user
-(except those cases where sudo is needed).
-This user does not need to have SU permisions,
-but it must be able to become su through `sudo` command. 
+(except cases when sudo is needed).
+This user should not have SU permisions,
+but it must be able to become su through `sudo` command,
+as some scripts in this repo will need SU permission.
 
 #### Creating User
 
