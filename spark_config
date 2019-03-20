@@ -1,12 +1,12 @@
 # FIXME: adjust configs
 # Worker cores available for Spark on this host
-export SPARK_WORKER_CORES=3
+export SPARK_WORKER_CORES=8
 # Memory available for Spark on this host
-export SPARK_WORKER_MEMORY=6G
+export SPARK_WORKER_MEMORY=8G
 # Location of Python binaries
-export PYSPARK_PYTHON=/usr/bin/python
-export PYSPARK_DRIVER_PYTHON=/usr/bin/python
-export PYSPARK3_PYTHON=/usr/bin/python3
-export PYSPARK3_DRIVER_PYTHON=/usr/bin/python3
+export PYSPARK_PYTHON=/opt/anaconda/conda/bin/python
+export PYSPARK_DRIVER_PYTHON=/opt/anaconda/conda/bin/python
+export PYSPARK3_PYTHON=/opt/anaconda/conda/bin/python3
+export PYSPARK3_DRIVER_PYTHON=/opt/anaconda/conda/bin/python3
 # Default number of cores given to a job (avoids allocating all cores to a given job, which is the default behavior)
-export SPARK_MASTER_OPTS="-Dspark.deploy.defaultCores=4"
+#export SPARK_MASTER_OPTS="-Dspark.deploy.defaultCores=4"

@@ -12,5 +12,13 @@
         <name>io.compression.codecs</name>
         <value>org.apache.hadoop.io.compress.SnappyCodec</value>
     </property>
+    <property>
+      <name>hadoop.proxyuser.cluster.groups</name>
+      <value>*</value>
+    </property>
+    <property>
+      <name>hadoop.proxyuser.cluster.hosts</name>
+      <value>*</value>
+    </property>
 </configuration>
 
