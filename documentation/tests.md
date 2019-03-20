@@ -7,3 +7,5 @@
 | Memory-bound | Agrupamento | 10GB | Codigo com o agrupamento de todas as colunas do banco. Tempo de execução: `6 minutos`. Status: `sucesso`. | 
 | Memory-bound | Agrupamento | 50GB | Codigo com o agrupamento de todas as colunas do banco. Tempo de execução: `28 minutos`. Status: `sucesso`. | 
 | Memory-bound | Concorrencia | 10GB | Codigo com o agrupamento de todas as colunas do banco rodando 6x, em dois usuários diferentes, 3 execuções por usuário. Tempo de execução: `28 minutos`. Status: `sucesso`. |
+| Memory-bound | Job Longo | 10GB | Codigo com o agrupamento de todas as colunas do banco rodando infinitamente por 24h. Status: `sucesso`. |
+
