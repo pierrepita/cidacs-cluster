@@ -164,6 +164,8 @@ every machine in the `/usr/lib/jvm/java` directory.
 
 #### Configure Enviroment Variables
 
+**FIXME: add this to all users**
+
 After placing each folder at its place,
 a list of environment variables for binary and configuration
 folders are added to the `bash_profile` file.
