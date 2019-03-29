@@ -164,8 +164,6 @@ every machine in the `/usr/lib/jvm/java` directory.
 
 #### Configure Enviroment Variables
 
-**FIXME: add this to all users**
-
 After placing each folder at its place,
 a list of environment variables for binary and configuration
 folders are added to the `bash_profile` file.
@@ -184,6 +182,9 @@ PATH=$PATH:$HOME/.local/bin:$HOME/bin:$JAVA_HOME/bin:$HADOOP_PREFIXbin:$HADOOP_P
 n:$SPARK_HOME/sbin                                                                                        
 export PATH
 ```
+
+It is important to note this step needs to be done for all users in the cluster,
+as HDFS comandline tools would not be accessible for users without these variables in their enviroment.
 
 ### HDFS
 
