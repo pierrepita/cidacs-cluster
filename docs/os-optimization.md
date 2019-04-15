@@ -18,6 +18,8 @@ deactivates access time tracking - rendering enhanced IO performance.
 3. It is recommended not to use LVM and RAID on DataNode
 or TaskTracker machines as it reduces performance.
 
+## OS Optimization for Cluster
+
 Source: https://community.hortonworks.com/articles/55637/operating-system-os-optimizations-for-better-clust.html
 
 1. Disable Transparent Huge Pages (THP)
@@ -25,3 +27,7 @@ Source: https://community.hortonworks.com/articles/55637/operating-system-os-opt
 3. Improve Virtual Memory Usage
 4. Configure CPUs for Performance Scaling
 5. Tune SSD Configurations
+
+## Increase "Open Files" limit
+
+Source: https://easyengine.io/tutorials/linux/increase-open-files-limit
