@@ -1,4 +1,4 @@
-# Operational System Optimizations for Spark Clusters
+# Operational System Optimizations for Clusters Spark
 
 Source: https://www.dezyre.com/article/how-to-ensure-best-performance-for-your-hadoop-cluster/200
 
@@ -17,6 +17,8 @@ when mounted with noatime option,
 deactivates access time tracking - rendering enhanced IO performance.
 3. It is recommended not to use LVM and RAID on DataNode
 or TaskTracker machines as it reduces performance.
+
+### Disable checkpoint
 
 ## OS Optimization for Cluster
 
