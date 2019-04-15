@@ -17,3 +17,11 @@ when mounted with noatime option,
 deactivates access time tracking - rendering enhanced IO performance.
 3. It is recommended not to use LVM and RAID on DataNode
 or TaskTracker machines as it reduces performance.
+
+Source: https://community.hortonworks.com/articles/55637/operating-system-os-optimizations-for-better-clust.html
+
+1. Disable Transparent Huge Pages (THP)
+2. Disable Host Swappiness
+3. Improve Virtual Memory Usage
+4. Configure CPUs for Performance Scaling
+5. Tune SSD Configurations
